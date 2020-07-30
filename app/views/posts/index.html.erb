@@ -1,8 +1,10 @@
 <h1>FirstAPP</h1>
-<%= form_with url: "/posts", method: :post,id: "form" do |form| %> <%# urlはクリエイトアクション %>
-  <%= form.text_field :content %>
+<%= form_with url: "/posts", method: :post, id: "form" do |form| %> <%# urlはクリエイトアクション %>
+  <%= form.text_field :content , id: "content" %>
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
+
+<div id="list"></div>
 
 <% @posts.each do |post| %>
   <div class="post" data-id= <%= post.id %> data-check= <%= post.checked %>> <%# data-idはpostsテーブルのidカラム %>

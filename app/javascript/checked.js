@@ -17,7 +17,7 @@ function check() { //関数checkを宣言
 
       XHR.responseType = "json"; //レスポンスの形式をjsonに指定
 
-      XHR.send(); //引数指定はなくて良い。これを記述して初めてリクエスト送信できる
+      XHR.send(); //情報を送るわけではないので引数指定はなくて良い。これを記述して初めてリクエスト送信できる
 
       XHR.onload = () => { //レスポンスが成功した時に以下が呼び出される
         const item = XHR.response.post; //item = Post.find(params[:id])の値を変数itemに代入している
