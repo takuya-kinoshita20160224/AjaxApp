@@ -5,8 +5,8 @@ class PostsController < ApplicationController
   end
 
   def create #アクション定義
-    Post.create(content: params[:content])#モデル.メソッド（カラム名：送信データ）
-    redirect_to action: :index  #indexアクションにリダイレクト
+    post = Post.create(content: params[:content], checked: false)#モデル.メソッド（カラム名：送信データ）
+    render json:{ post: post }  # json:{HTTPメソッド: 変数post }
   end
   
   def checked
@@ -18,6 +18,6 @@ class PostsController < ApplicationController
     end
 
     item = Post.find(params[:id])
-    render json: { post: item }
+    render json: { post: item } #json: { HTTPメソッド: 変数item }
   end
 end
